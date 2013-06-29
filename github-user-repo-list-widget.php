@@ -13,8 +13,8 @@ class Github_User_Repo_List_No_Cache extends WP_Widget {
     public function __construct() {
 	parent::__construct(
 		'github-user-repo-list-widget-no-cache', // Base ID
-		'Github user repo list widget no cache', // Name
-		array('description' => __('Github user repository list widget - no cache'),) // Args
+		'Github user repo list', // Name
+		array('description' => __('Github user repo list'),) // Args
 	);
     }
 
