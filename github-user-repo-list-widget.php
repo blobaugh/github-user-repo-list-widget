@@ -57,17 +57,17 @@ class Github_User_Repo_List_No_Cache extends WP_Widget {
 	    $error_message = $response->get_error_message();
 	    echo "Something went wrong: $error_message";
 	} else if(  '404' == wp_remote_retrieve_response_code( $response ) ) {
-	echo 'Invalid user';
-    }else {
-	$body = json_decode( wp_remote_retrieve_body( $response ) );
-	echo '<ul>';
-	foreach( $body AS $b ) {
+	    echo 'Invalid user';
+        }else {
+	    $body = json_decode( wp_remote_retrieve_body( $response ) );
+	    echo '<ul>';
+	    foreach( $body AS $b ) {
 		echo '<li>';
 		echo '<a href="' . $b->html_url . '">' . $b->name . '</a>';
 		echo '<br />' . $b->description;
 		echo '</li>';
-	}
-	echo '</ul>';
+	    }
+	    echo '</ul>';
 	}
     }
 
